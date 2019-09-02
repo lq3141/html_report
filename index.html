@@ -4,9 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
 <script src="w3.js"></script>
+<script src="sim_parameter.js"></script>
 <body>
 
-<h2>build tag = $$</h2>
+<h2>build tag = simParam.buildTag</h2>
 
 <table id="id01" class="w3-table w3-striped">
   <tr>
@@ -14,7 +15,7 @@
     <th>City</th>
     <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(2)')" style="cursor:pointer">Country</th>
   </tr>
-  <tr w3-repeat="customers"  class="item">
+  <tr w3-repeat="sim_result"  class="item">
     <td>{{CustomerName}}</td>
     <td>{{City}}</td>
     <td>{{Country}}</td>
@@ -22,7 +23,7 @@
 </table>
 
 <script>
-w3.getHttpObject("customers.js", myFunction);
+w3.getHttpObject("sim_result.js", myFunction);
 
 function myFunction(myObject) {
   w3.displayObject("id01", myObject);

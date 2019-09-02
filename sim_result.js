@@ -1,5 +1,5 @@
 {
-"customers":[
+"sim_result":[
 {"CustomerName" : "Alfreds Futterkiste","City" : "Berlin","Country" : "Germany"},
 {"CustomerName" : "Berglunds snabbköp","City" : "Luleå","Country" : "Sweden"},
 {"CustomerName" : "Centro comercial Moctezuma","City" : "México D.F.","Country" : "Mexico"},
