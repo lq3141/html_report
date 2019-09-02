@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title>Build Detail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<script src="w3.js"></script>
+<body>
+
+<h2>build tag = $$</h2>
+
+<table id="id01" class="w3-table w3-striped">
+  <tr>
+    <th>Customer</th>
+    <th>City</th>
+    <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(2)')" style="cursor:pointer">Country</th>
+  </tr>
+  <tr w3-repeat="customers"  class="item">
+    <td>{{CustomerName}}</td>
+    <td>{{City}}</td>
+    <td>{{Country}}</td>
+  </tr>
+</table>
+
+<script>
+w3.getHttpObject("customers.js", myFunction);
+
+function myFunction(myObject) {
+  w3.displayObject("id01", myObject);
+}
+</script>
+
+</body>
+</html> 
+
