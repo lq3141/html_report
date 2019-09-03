@@ -42,8 +42,10 @@
         var i, totalFail = 0;
         var caseArray = myObject.sim_result;
         for (i=0; i< caseArray.length; i++) {
-            if (caseArray[i].status == "fail")
+            if (caseArray[i].status == "fail") {
                 totalFail += 1;
+                myObject.sim_result[i].status = "FAIL";
+            }
         }
         myObject.total_fail = totalFail;
         myObject.total_case = caseArray.length;
