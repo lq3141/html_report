@@ -7,27 +7,66 @@
 <script src="sim_parameter.js"></script>
 <body>
 
-<h2>build tag = simParam.buildTag</h2>
 
-<table id="id01" class="w3-table w3-striped">
-  <tr>
-    <th>Customer</th>
-    <th>City</th>
-    <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(2)')" style="cursor:pointer">Country</th>
-  </tr>
-  <tr w3-repeat="sim_result"  class="item">
-    <td>{{CustomerName}}</td>
-    <td>{{City}}</td>
-    <td>{{Country}}</td>
-  </tr>
-</table>
+<div id="idparam" class="w3-containter">
+    <h3>Build Tag        = {{buildTag}}</h3>
+    <h3>Design Tag       = {{designTag}}</h3>
+    <h3>Library Tag      = {{libraryTag}}</h3>
+    <h3>Verification Tag = {{verificationTag}}</h3>
+</div>
+
+<div class="w3-containter w3-round w3-border">
+    <h2 class="w3-blue">Simulation Result</h2>
+    <table id="id01" class="w3-table w3-striped">
+        <tr>
+          <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(1)')" style="cursor:pointer">Catagory</th>
+          <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(2)')" style="cursor:pointer">Case</th>
+          <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(3)')" style="cursor:pointer">Owner</th>
+          <th onclick="w3.sortHTML('#id01', '.item', 'td:nth-child(4)')" style="cursor:pointer">Status ({{total_case}}/{{total_fail}})</th>
+        </tr>
+        <tr w3-repeat="sim_result"  class="item">
+          <td>{{sim_type}}</td>
+          <td>{{case_name}}</td>
+          <td>{{owner}}</td>
+          <td><div id="SimSt">{{status}}</div></td>
+          <!--<td>{{status}}</td>-->
+        </tr>
+    </table>
+</div>
 
 <script>
-w3.getHttpObject("sim_result.js", myFunction);
+    w3.getHttpObject("sim_result.json", getSimResult);
+    w3.getHttpObject("sim_parameter.json", getSimParam);
 
-function myFunction(myObject) {
-  w3.displayObject("id01", myObject);
-}
+    function getSimResult(myObject) {
+        var i, totalFail = 0;
+        var caseArray = myObject.sim_result;
+        for (i=0; i< caseArray.length; i++) {
+            if (caseArray[i].status == "fail")
+                totalFail += 1;
+        }
+        myObject.total_fail = totalFail;
+        myObject.total_case = caseArray.length;
+        w3.displayObject("id01", myObject);
+    }
+
+    function getSimParam(myObject) {
+        w3.displayObject("idparam", myObject);
+    }
+</script>
+
+<script>
+    console.log("test");
+    var st = document.getElementById("SimSt");
+    console.log(st);
+    console.log(st.length);
+    //for (var i=0; i< st.length; i++) {
+    //    if (st[i] == "fail") {
+    //        //st[i].className += "w3-red";
+    //        st[i].innerHTML = "w3-red";
+    //    }
+    //}
+    //console.log(st);
 </script>
 
 </body>

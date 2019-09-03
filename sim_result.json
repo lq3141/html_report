@@ -1,0 +1,112 @@
+{
+    "sim_result": [
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_acc_wrong_adr",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_ana_conn",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_ana_rst",
+            "owner": "qili",
+            "status": "fail"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_app_int",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_debug_if",
+            "owner": "qili",
+            "status": "fail"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_ei",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_fifo_dbg_rd",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_fw_trig_int",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_gpio",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_shadow",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_spi",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_starter",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_test_cap_hrx0",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_test_cap_hrx1",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_test_cap_lrx0",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_test_cap_lrx1",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_timer",
+            "owner": "qili",
+            "status": "pass"
+        },
+        {
+            "sim_type": "veri/top/sim.soc",
+            "case_name": "case_wr_test_cap_mem",
+            "owner": "qili",
+            "status": "pass"
+        }
+    ]
+}
